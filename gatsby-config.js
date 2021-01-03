@@ -175,5 +175,16 @@ module.exports = {
         endpoint: process.env.MAILCHIMP_ENDPOINT,
       },
     },
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-smoothscroll`,
+    {
+        resolve: `gatsby-transformer-remark`,
+        options: {
+            plugins: [
+                // ...
+                `gatsby-remark-autolink-headers`,
+            ],
+        },
+    },
   ],
 };

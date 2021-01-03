@@ -1,1 +1,14 @@
-Personal site for aengusmcmillin.com
+
+This started as a fork of the Aengus McMillin's personal site (aengusmcmillin.com), in order to test his bidirectional link mechanism in gatsby at Countable.
+
+Aengus' dependency lib, gatsby-theme-brain, needs the following change for this to work.
+
+node_modules/@aengusm/gatsby-theme-brain/src/templates/brain.js
+
+childMdx {
+    headings {
+        value
+        depth
+    }
+}
+

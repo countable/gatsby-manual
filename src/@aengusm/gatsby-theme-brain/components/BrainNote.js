@@ -1,8 +1,10 @@
+
 import React from "react";
 import styled from "@emotion/styled";
 import Layout from "../../../components/Layout";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import SEO from "../../../components/SEO";
+import ToC from "../components/toc";
 
 const BrainLayout = styled(Layout)`
   margin: 5em auto 6rem;
@@ -66,12 +68,15 @@ export default ({ note }, pageContext) => {
       );
     }
   }
+  
+  console.log(note.childMdx.headings)
 
   return (
     <BrainLayout>
       <BrainNote>
         <SEO post={{ title: `${note.title}`, path: pageContext.postPath }} />
         <h1>{note.title}</h1>
+        <ToC headings={note.childMdx.headings}></ToC>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>
         {referenceBlock}
       </BrainNote>

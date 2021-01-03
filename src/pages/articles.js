@@ -75,6 +75,10 @@ export const query = graphql`
         name
         childMdx {
           excerpt(pruneLength: 250)
+          headings {
+            value
+            depth
+          }
           frontmatter {
             sortDate: date
             displayDate: date(formatString: "MMMM D, Y")
